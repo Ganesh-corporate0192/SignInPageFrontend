@@ -1,0 +1,86 @@
+<div class="container">
+  <h2>Create Account</h2>
+
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+
+    <!-- Name -->
+    <input 
+      type="text"
+      [(ngModel)]="user.name"
+      name="name"
+      #name="ngModel"
+      placeholder="Name"
+      required
+      minlength="3"
+      maxlength="20">
+
+    @if (name.invalid && name.touched) {
+      <div>
+        @if (name.errors?.['required']) {
+          <small>Name is required</small>
+        }
+        @if (name.errors?.['minlength']) {
+          <small>Minimum 3 characters</small>
+        }
+        @if (name.errors?.['maxlength']) {
+          <small>Maximum 20 characters</small>
+        }
+      </div>
+    }
+
+    <!-- Email -->
+    <input 
+      type="email"
+      [(ngModel)]="user.email"
+      name="email"
+      #email="ngModel"
+      placeholder="Email"
+      required
+      email>
+
+    @if (email.invalid && email.touched) {
+      <div>
+        @if (email.errors?.['required']) {
+          <small>Email is required</small>
+        }
+        @if (email.errors?.['email']) {
+          <small>Invalid email format</small>
+        }
+      </div>
+    }
+
+    <!-- Password -->
+    <input 
+      type="password"
+      [(ngModel)]="user.password"
+      name="password"
+      #password="ngModel"
+      placeholder="Password"
+      required
+      minlength="6"
+      maxlength="16"
+      pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,16}$">
+
+    @if (password.invalid && password.touched) {
+      <div>
+        @if (password.errors?.['required']) {
+          <small>Password is required</small>
+        }
+        @if (password.errors?.['minlength']) {
+          <small>Minimum 6 characters</small>
+        }
+        @if (password.errors?.['maxlength']) {
+          <small>Maximum 16 characters</small>
+        }
+        @if (password.errors?.['pattern']) {
+          <small>Must contain 1 uppercase, 1 lowercase and 1 number</small>
+        }
+      </div>
+    }
+
+    <button type="submit" [disabled]="registerForm.invalid || loading">
+      Register
+    </button>
+
+  </form>
+</div>
