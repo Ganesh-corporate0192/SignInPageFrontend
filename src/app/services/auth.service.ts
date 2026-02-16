@@ -12,7 +12,7 @@ export class AuthService {
     return this.http.post(this.apiUrl, {
       name: user.name,
       email: user.email,
-      passwordHash: user.password
+      password: user.password
     });
   }
 }
