@@ -1,0 +1,25 @@
+.dashboard-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.welcome-card {
+  background: white;
+  padding: 50px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background: crimson;
+  color: white;
+  cursor: pointer;
+}

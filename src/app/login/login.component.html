@@ -1,0 +1,42 @@
+<div class="login-container">
+
+  @if (!isLoggedIn) {
+
+    <h2>Login</h2>
+
+    <form (ngSubmit)="onLogin()">
+
+      <input
+        type="email"
+        placeholder="Enter Email"
+        [(ngModel)]="user.email"
+        name="email"
+        required
+      />
+
+      <input
+        type="password"
+        placeholder="Enter Password"
+        [(ngModel)]="user.password"
+        name="password"
+        required
+      />
+
+      <button type="submit" [disabled]="loading">
+        {{ loading ? 'Logging in...' : 'Login' }}
+      </button>
+
+    </form>
+  }
+
+  @if (isLoggedIn) {
+    <div class="success-section">
+      <h3>🎉 Login Successful!</h3>
+      <p>{{ message }}</p>
+      <button (click)="logout()">Login Again</button>
+    </div>
+  }
+
+  <p class="message">{{ message }}</p>
+
+</div>

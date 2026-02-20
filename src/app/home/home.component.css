@@ -1,0 +1,86 @@
+.home-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.glass-card {
+  width: 420px;
+  padding: 50px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  text-align: center;
+  color: white;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  margin-bottom: 30px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  display: inline-block;
+}
+
+.primary {
+  background: #ff9800;
+  color: white;
+}
+
+.primary:hover {
+  background: #ff5722;
+  transform: scale(1.05);
+}
+
+.secondary {
+  background: #1cc88a;
+  color: white;
+}
+
+.secondary:hover {
+  background: #17a673;
+  transform: scale(1.05);
+}
+
+.logout {
+  background: crimson;
+  color: white;
+}
+
+.logout:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
+
+.logged-in-section {
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

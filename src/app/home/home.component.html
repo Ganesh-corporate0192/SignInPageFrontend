@@ -1,0 +1,27 @@
+<div class="home-container">
+
+  <div class="glass-card">
+
+    <h1>🚀 Welcome to Signin App</h1>
+    <p class="subtitle">
+      Secure authentication system built with Angular & .NET
+    </p>
+
+    @if (!isLoggedIn) {
+      <div class="buttons">
+        <a routerLink="/signup" class="btn primary">Create Account</a>
+        <a routerLink="/login" class="btn secondary">Login</a>
+      </div>
+    }
+
+    @if (isLoggedIn) {
+      <div class="logged-in-section">
+        <h3>🎉 Welcome Back!</h3>
+        <p>You are successfully logged in.</p>
+        <button class="btn logout" (click)="logout()">Logout</button>
+      </div>
+    }
+
+  </div>
+
+</div>
